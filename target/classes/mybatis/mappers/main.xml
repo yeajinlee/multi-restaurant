@@ -20,9 +20,12 @@
 	
 	<select id="selectRestList" resultMap="mainResult">
 		<![CDATA[
-			select * from (select * from (select b.rest_no, b.rest_name, b.rest_price, b.rest_address, b.rest_scope, b.rest_social, b.rest_theme, b.rest_opendate, a.img_filename 
-			from (select row_number() over(partition by rest_no order by img_fileno desc) as rnum, reviewimg_info.* from reviewimg_info) a 
-			inner join restaurant_info b on a.rest_no = b.rest_no where rnum = 1) order by SYS.dbms_random.value) where rownum < 7
+			SELECT * FROM 
+				(SELECT * FROM 
+					(SELECT b.rest_no, b.rest_name, b.rest_price, b.rest_address, b.rest_scope, b.rest_social, b.rest_theme, b.rest_opendate, a.img_filename FROM 
+						(SELECT row_number() OVER (PARTITION BY rest_no order BY img_fileno DESC) AS rnum, reviewimg_info.* FROM reviewimg_info) a 
+						INNER JOIN restaurant_info b ON a.rest_no = b.rest_no WHERE rnum = 1) 
+			ORDER BY SYS.dbms_random.value) WHERE rownum < 7
 		]]>
 	</select>
 	
