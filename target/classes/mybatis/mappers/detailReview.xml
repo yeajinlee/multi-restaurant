@@ -21,8 +21,8 @@
 		</resultMap>
 		<insert id="addNewReview" parameterType="detailReviewVO">
 			<![CDATA[
-				insert into review_info(review_NO, user_ID, review_Scope, review_Text, rest_NO, review_Date)
-				values(review_seq.nextval, #{user_ID}, #{review_Scope}, #{review_Text}, #{rest_NO}, sysdate)
+				INSERT INTO review_info(review_NO, user_ID, review_Scope, review_Text, rest_NO, review_Date)
+				VALUES(review_seq.nextval, #{user_ID}, #{review_Scope}, #{review_Text}, #{rest_NO}, sysdate)
 			]]>
 		</insert>
 		<!-- <insert id="addNewReviewImg" parameterType="java.util.Map">
@@ -34,33 +34,32 @@
 		</insert> -->
 		<insert id="addNewReviewImg" parameterType="imageVO">
 			<![CDATA[
-				insert into reviewimg_info (img_FileNO, img_FileName, review_NO, rest_NO)
-				values (reviewIMG_seq.nextval, #{img_FileName}, #{review_NO}, #{rest_NO})
+				INSERT INTO reviewimg_info (img_FileNO, img_FileName, review_NO, rest_NO)
+				VALUES (reviewIMG_seq.nextval, #{img_FileName}, #{review_NO}, #{rest_NO})
 			]]>
 		</insert>
 		
 		<select id="selectNewReviewNO" resultType="int">
 			<![CDATA[
-				select nvl(max(review_NO),0) + 1 from review_info
+				SELECT nvl(max(review_NO),0) + 1 FROM review_info
 			]]>
 		</select>
 		<select id="selectRestNO" resultType="int">
 			<![CDATA[
-				select rest_NO from review_info where review_no = (select max(review_NO) from review_info)
+				SELECT rest_NO FROM review_info WHERE review_no = (SELECT max(review_NO) FROM review_info)
 			]]>
 		</select>
 		<delete id="deleteReview" parameterType="detailReviewVO">
 
 			<![CDATA[
-				delete from review_info where review_NO = #{review_NO}
+				DELETE FROM review_info WHERE review_NO = #{review_NO}
 			]]>
 		</delete>
 		<update id="updateReview" parameterType="java.util.Map">
-			update review_info set review_Scope=#{review_Scope}, review_Text = #{review_Text}
-			<!-- <if test="imgFileName != '' and imgFileList != null">
-				, imgFileName = #{imgFileName}
-			</if> -->
-			where review_NO = #{review_NO}
+			<![CDATA[
+				UPDATE review_info set review_Scope=#{review_Scope}, review_Text = #{review_Text}
+				WHERE review_NO = #{review_NO}
+			]]>
 		</update>
 	</mapper>
 	
