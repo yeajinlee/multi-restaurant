@@ -41,7 +41,7 @@
 	</select>
 	<select id="selectRestImg" resultMap="imageResult">
 		<![CDATA[
-			SELET img_FileName FROM reviewimg_info WHERE rest_NO = #{rest_NO} ORDER BY img_fileno DESC
+			SELECT img_FileName FROM reviewimg_info WHERE rest_NO = #{rest_NO} ORDER BY img_fileno DESC
 		]]>
 	</select>
 	<select id="selectAllReview" resultMap="detailReviewResult">
@@ -52,7 +52,7 @@
 	<select id="selectSideList" resultMap="detailResult">
 		<![CDATA[
 			SELECT * FROM 
-				(SELET * FROM 
+				(SELECT * FROM 
 					(SELECT b.rest_no, b.rest_name, b.rest_price, b.rest_address, b.rest_scope, b.rest_social, b.rest_Theme, b.rest_opendate, a.img_filename FROM 
 						(SELECT row_number() OVER (PARTITION BY rest_no ORDER BY img_fileno DESC) AS rnum, reviewimg_info.* FROM reviewimg_info) a 
 					INNER JOIN restaurant_info b ON a.rest_no = b.rest_no WHERE rnum = 1) 
