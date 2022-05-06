@@ -20,7 +20,7 @@
 	
 	<select id="selectAllReviewOdd" resultMap="reviewResult">
 		<![CDATA[
-			SEELECT a.rest_name, b.* 
+			SELECT a.rest_name, b.* 
 			FROM restaurant_info a RIGHT OUTER JOIN profile_review b ON b.rest_no = a.rest_no 
 			WHERE mod(review_no,2)=1 ORDER BY review_no desc
 		]]>

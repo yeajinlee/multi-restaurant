@@ -12,6 +12,7 @@ public class MainVO {
 	private Date rest_OpenDate;
 	private String rest_Theme;
 	private String img_FileName;
+	private String rest_filename;
 	
 	
 	public String getImg_FileName() {
@@ -67,6 +68,12 @@ public class MainVO {
 	}
 	public void setRest_Theme(String rest_Theme) {
 		this.rest_Theme = rest_Theme;
+	}
+	public String getRest_filename() {
+		return rest_filename;
+	}
+	public void setRest_filename(String rest_filename) {
+		this.rest_filename = rest_filename;
 	}
 	
 	
