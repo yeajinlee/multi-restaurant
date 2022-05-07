@@ -16,6 +16,7 @@ public class DetailVO {
 	private Date rest_OpenDate;
 	private String rest_Theme;
 	private String img_Filename;
+	private String rest_filename;
 
 	public int getRest_NO() {
 		return rest_NO;
@@ -95,6 +96,14 @@ public class DetailVO {
 
 	public void setRest_Theme(String rest_Theme) {
 		this.rest_Theme = rest_Theme;
+	}
+
+	public String getRest_filename() {
+		return rest_filename;
+	}
+
+	public void setRest_filename(String rest_filename) {
+		this.rest_filename = rest_filename;
 	}
 	
 	

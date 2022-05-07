@@ -199,7 +199,7 @@
 				<th>주변 추천</th>
 				<c:forEach var="side" items="${detailSideList }">
 					<tr>
-						<td><a href="${contextPath}/detail.do?rest_NO=${side.rest_NO}"><img src="${contextPath}/resources/image/${side.img_Filename}" alt=""></a></td>
+						<td><a href="${contextPath}/detail.do?rest_NO=${side.rest_NO}"><img src="${contextPath}/resources/image/${side.rest_filename}" alt=""></a></td>
 						<td><a href="${contextPath}/detail.do?rest_NO=${side.rest_NO}">${side.rest_Name }</a><br>${side.rest_Theme}<br>${side.rest_Address }<br>${side.rest_Price }</td>
 						<td><i class="fas fa-star"></i>&nbsp;&nbsp;${side.rest_Scope}/5</td>
 					</tr>
