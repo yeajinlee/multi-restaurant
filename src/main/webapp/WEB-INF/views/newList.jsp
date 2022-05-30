@@ -138,7 +138,7 @@ span.r_list img {
 				</div>
 			</div>
 			<div class="content">
-				<!-- <span class="l_map"><img src="../images/placeholder.png" alt="지도 부분"></span> -->
+				<span class="l_map"><img src="../images/placeholder.png" alt="지도 부분"></span>
 				<div class="map" id="map" style="width: 500px; height: 500px;">
 				</div>
 				<span class="r_list">
