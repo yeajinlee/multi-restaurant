@@ -1,11 +1,13 @@
 package com.spring.project2_test.newList.vo;
 
+import java.sql.Date;
+
 import org.springframework.stereotype.Component;
 @Component("newListVO")
 public class NewListVO {
 	private String rest_Name;
 	private String rest_fileName;
-	private String rest_OpenDate;
+	private Date rest_OpenDate;
 	private int rest_NO;
 	private String rest_Price;
 	private String rest_Address;
@@ -23,12 +25,6 @@ public class NewListVO {
 	}
 	public void setRest_fileName(String rest_fileName) {
 		this.rest_fileName = rest_fileName;
-	}
-	public String getRest_OpenDate() {
-		return rest_OpenDate;
-	}
-	public void setRest_OpenDate(String rest_OpenDate) {
-		this.rest_OpenDate = rest_OpenDate;
 	}
 	public int getRest_NO() {
 		return rest_NO;
@@ -75,5 +71,12 @@ public class NewListVO {
 		// TODO Auto-generated method stub
 		
 	}
+	public Date getRest_OpenDate() {
+		return rest_OpenDate;
+	}
+	public void setRest_OpenDate(Date rest_OpenDate) {
+		this.rest_OpenDate = rest_OpenDate;
+	}
+	
 
 }

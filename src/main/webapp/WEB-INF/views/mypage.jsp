@@ -113,7 +113,7 @@ ResultSet rs = pstmt.executeQuery();
 							<img src="${contextPath}/resources/image/<%=rs.getString("user_profile")%>" alt="" style="border-radius: 50%;">
 								<h4><%=rs.getString("user_Nickname")%>님 안녕하세요!</h4>
 								<p>Lv. <%=rs.getInt("user_Level") %></p>
-								<a href="${pageContext.request.contextPath}/mypage.do" target="_self"><p>프로필 수정</p></a>
+								<a href="${pageContext.request.contextPath}/editProfile.do" target="_self"><p>프로필 수정</p></a>
 							<%} %>
 							</c:if>
 							
