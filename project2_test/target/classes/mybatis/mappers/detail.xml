@@ -15,6 +15,7 @@
 		<result property="rest_OpenDate" column="rest_OpenDate"/>
 		<result property="rest_Theme" column="rest_Theme"/>
 		<result property="img_Filename" column="img_Filename"/>
+		<result property="rest_filename" column="rest_filename" />
 	</resultMap>
 	<resultMap type="imageVO" id="imageResult">
 		<result property="img_FileNO" column="img_FileNO"/>
@@ -36,25 +37,37 @@
 	</resultMap>
 	<select id="selectRestDetail" resultMap="detailResult">
 		<![CDATA[
-			select * from Restaurant_Info where rest_NO = #{rest_NO}
+			SELECT * FROM Restaurant_Info WHERE rest_NO = #{rest_NO}
 		]]>
 	</select>
 	<select id="selectRestImg" resultMap="imageResult">
 		<![CDATA[
-			select img_FileName from reviewimg_info where rest_NO = #{rest_NO} order by img_fileno desc
+			SELECT img_FileName FROM reviewimg_info WHERE rest_NO = #{rest_NO} ORDER BY img_fileno DESC
 		]]>
 	</select>
 	<select id="selectAllReview" resultMap="detailReviewResult">
 		<![CDATA[
-			select * from profile_review where rest_NO = #{rest_NO} order by review_no desc
+			SELECT * FROM profile_review WHERE rest_NO = #{rest_NO} ORDER BY review_no DESC
 		]]>
 	</select>
 	<select id="selectSideList" resultMap="detailResult">
+		<!-- <![CDATA[
+			SELECT * FROM 
+				(SELECT * FROM 
+					(SELECT b.rest_no, b.rest_name, b.rest_price, b.rest_address, b.rest_scope, b.rest_social, b.rest_Theme, b.rest_opendate, a.img_filename FROM 
+						(SELECT row_number() OVER (PARTITION BY rest_no ORDER BY img_fileno DESC) AS rnum, reviewimg_info.* FROM reviewimg_info) a 
+					INNER JOIN restaurant_info b ON a.rest_no = b.rest_no WHERE rnum = 1) 
+				ORDER BY SYS.dbms_random.value) 
+			WHERE rownum < 6
+		]]> -->
 		<![CDATA[
-			select * from (select * from (select b.rest_no, b.rest_name, b.rest_price, b.rest_address, b.rest_scope, b.rest_social, b.rest_Theme, b.rest_opendate, a.img_filename 
-			from (select row_number() over(partition by rest_no order by img_fileno desc) as rnum, reviewimg_info.* from reviewimg_info) a 
-			inner join restaurant_info b on a.rest_no = b.rest_no where rnum = 1) order by SYS.dbms_random.value) where rownum < 6
+			SELECT * FROM 
+    			(SELECT row_number() OVER (ORDER BY SYS.dbms_random.value) rnum, a.* FROM 
+        			(SELECT rest_no, rest_name, rest_price, rest_address, rest_theme, rest_filename FROM 
+        			restaurant_info) a) 
+			WHERE rnum < 7
 		]]>
+		
 	</select>
 	<!-- <insert id="addNewReview" parameterType="reveiwVO">
 		<![CDATA[
@@ -71,7 +84,7 @@
 	
 	<select id="countReview" resultType="int">
 		<![CDATA[
-			select count(*) from review_info where rest_NO = #{rest_NO}
+			SELECT count(*) FROM review_info WHERE rest_NO = #{rest_NO}
 		]]>
 	</select>
 </mapper>

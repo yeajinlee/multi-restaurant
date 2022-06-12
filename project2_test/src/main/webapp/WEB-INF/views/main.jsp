@@ -129,7 +129,7 @@ height: 300px;
             		<div class="col-lg-6 col-xl-4">
                     <div class="card mb-5 mb-xl-0">
                         <a href="${contextPath}/detail.do?rest_NO=${rest.rest_NO}">
-                        	<img src="${contextPath}/resources/image/${rest.img_FileName}" width="327" height="200" alt="">
+                        	<img src="${contextPath}/resources/image/${rest.rest_filename}" width="327" height="200" alt="">
                         	<%-- 누가봐도 안될거같이생김...=>됨! --%>
                         </a>
                         <div class="card-body" >
@@ -149,7 +149,7 @@ height: 300px;
                                     </li>
                                 </ul>
                             </div>
-                            <div class="d-grid"><a class="btn btn-outline-primary" href="${contextPath}/detail.do?rest_NO=${rest.rest_NO}">보러가기</a></div>
+                            <%-- <div class="d-grid"><a class="btn btn-outline-primary" href="${contextPath}/detail.do?rest_NO=${rest.rest_NO}">보러가기</a></div> --%>
                         </div>
                     </div>
                 </div>

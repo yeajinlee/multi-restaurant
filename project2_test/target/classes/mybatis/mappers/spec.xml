@@ -10,15 +10,13 @@
 		<result property="rest_fileName" column="rest_fileName" />
 		<result property="rest_No" column="rest_No" />
 		<result property="rest_Address" column="rest_Address" />
-		
+
 	</resultMap>
-	
+
 	<select id="selectSpecList" resultMap="specResult">
 	<![CDATA[
-	
-select ri.rest_no, ri.rest_name, ri.rest_fileName, ri.rest_theme , ri.rest_Address
-from Restaurant_Info ri where ri.rest_theme= #{rest_theme}
-
-			]]>
-</select>
+		SELECT ri.rest_no, ri.rest_name, ri.rest_fileName, ri.rest_theme , ri.rest_Address
+		FROM Restaurant_Info ri WHERE ri.rest_theme= #{rest_theme}
+	]]>
+	</select>
 </mapper>

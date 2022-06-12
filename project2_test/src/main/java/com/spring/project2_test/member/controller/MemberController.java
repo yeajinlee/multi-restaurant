@@ -26,4 +26,6 @@ public interface MemberController {
 //            HttpServletRequest request, HttpServletResponse response) throws Exception;
 	public ModelAndView logout(HttpServletRequest request, HttpServletResponse response) throws Exception;
 	public ModelAndView addMember(@ModelAttribute("info") MemberVO memberVO,HttpServletRequest request, HttpServletResponse response) throws Exception;
+	
+	public ModelAndView editProfile(HttpServletRequest request, HttpServletResponse response) throws Exception;
 }

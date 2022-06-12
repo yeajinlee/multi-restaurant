@@ -74,7 +74,13 @@ public class MemberControllerImpl implements MemberController{
 		return mav;
 	}
 	
-	
+	@Override
+	@RequestMapping(value="/editProfile.do", method = RequestMethod.GET)
+	public ModelAndView editProfile(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		String viewName = (String) request.getAttribute("viewName");
+		ModelAndView mav = new ModelAndView(viewName);
+		return null;
+	}
 	
 	
 //	@Override
