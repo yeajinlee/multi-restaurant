@@ -40,7 +40,7 @@
 	src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
 	integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
 	crossorigin="anonymous"></script>
-<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=1576f2dfa1dab042d66ec76de07d40d5&libraries=services"></script>
+<script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
 <link rel="stylesheet" href="${contextPath}/resources/css/newList.css"
 	type="text/css">
 </head>
@@ -251,9 +251,9 @@ span.r_list img {
 			popup.classList.toggle("show");
 		}
 	</script>
-	<!-- <script type="text/javascript"
-		src="//dapi.kakao.com/v2/maps/sdk.js?appkey=091ccaf6ebd3685465c663c2218360f5&libraries=services"></script> -->
-		<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=1576f2dfa1dab042d66ec76de07d40d5&libraries=services"></script>
+	
+		<!-- <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=1576f2dfa1dab042d66ec76de07d40d5&libraries=services"></script> -->
+		<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=	1576f2dfa1dab042d66ec76de07d40d5&libraries=services"></script>
 
 	<script>
 		var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
