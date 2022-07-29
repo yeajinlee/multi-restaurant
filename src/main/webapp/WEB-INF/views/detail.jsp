@@ -131,10 +131,10 @@
 
 	<aside class='l_map'>
 		<span>
-			<iframe
+			<!-- <iframe
 				src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3162.390980157256!2d126.98338321450412!3d37.569410079797336!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357ca2e8bd68ec11%3A0x6ee78e54814af2d9!2z6rCT64207Iqk7Iuc!5e0!3m2!1sko!2skr!4v1641207292048!5m2!1sko!2skr"
 				width="300" height="300" style="border: 0;" allowfullscreen=""
-				loading="lazy"></iframe>
+				loading="lazy"></iframe> -->
 				<div id="map" style="width:300px;height:300px; z-index: 0"></div>
 			<br>
 		</span>
@@ -150,7 +150,7 @@
 			<span class="place_name" id="detail_rest_Name">${detail.rest_Name }</span>
 			<span class="theme">${detail.rest_Theme }</span>
 			<span class="star_wish">
-				<i class="fas fa-star"></i>&nbsp; <span><b>${detail.rest_Scope} / 5</b></span>&nbsp;&nbsp;&nbsp;
+				<i class="fas fa-star"></i>&nbsp; <span><b>${avgScope} / 5</b></span>&nbsp;&nbsp;&nbsp;
 				<span class="wish_cnt">리뷰 ${reviewCnt}</span>&nbsp;
 				<c:if test="${member != null}">
 					<i class="far fa-heart" id="heart" onclick="setWishList();"></i>

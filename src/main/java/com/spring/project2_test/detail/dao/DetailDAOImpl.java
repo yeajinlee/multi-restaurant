@@ -43,6 +43,19 @@ public class DetailDAOImpl implements DetailDAO{
 	}
 	
 	@Override
+	public String avgScope(int rest_NO) throws DataAccessException {
+		
+		String avgScope = sqlSession.selectOne("mappers.detail.avgScope", rest_NO);
+		
+		if (avgScope == null) {
+			avgScope = "0.0";
+		}
+		
+//		System.out.println("dao " + avgScope);
+		return avgScope;
+	}
+	
+	@Override
 	public List selectSideList() throws DataAccessException {
 		List detailSideList = sqlSession.selectList("mappers.detail.selectSideList");
 		return detailSideList;
@@ -94,7 +107,7 @@ public class DetailDAOImpl implements DetailDAO{
 	
 //	@Override
 //	public int selectRestNO() throws DataAccessException {
-//		return sqlSession.selectOne("mappers.detailReview.selectRestNO");
+//		return sqlSession.selectOne("mappers.detailReview.selectRestNO");s
 //	}
 	
 	@Override

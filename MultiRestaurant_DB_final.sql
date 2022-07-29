@@ -210,7 +210,27 @@ insert into review_info(review_NO, user_ID, review_scope, review_Text, rest_NO, 
     values (review_seq.nextval, 'a0005', 5, 'Å×½ºÆ® ¸®ºä9', 9, sysdate);
 insert into review_info(review_NO, user_ID, review_scope, review_Text, rest_NO, review_date)
     values (review_seq.nextval, 'a0006', 5, 'Å×½ºÆ® ¸®ºä10', 10, sysdate);   
-
+    
+insert into review_info(review_NO, user_ID, review_scope, review_Text, rest_NO, review_date)
+    values (review_seq.nextval, 'a0006', 1, 'Å×½ºÆ® ¸®ºä11', 10, sysdate);
+insert into review_info(review_NO, user_ID, review_scope, review_Text, rest_NO, review_date)
+    values (review_seq.nextval, 'a0005', 2, 'Å×½ºÆ® ¸®ºä12', 9, sysdate);
+insert into review_info(review_NO, user_ID, review_scope, review_Text, rest_NO, review_date)
+    values (review_seq.nextval, 'a0004', 3, 'Å×½ºÆ® ¸®ºä13', 8, sysdate);
+insert into review_info(review_NO, user_ID, review_scope, review_Text, rest_NO, review_date)
+    values (review_seq.nextval, 'a0003', 4, 'Å×½ºÆ® ¸®ºä14', 7, sysdate);
+insert into review_info(review_NO, user_ID, review_scope, review_Text, rest_NO, review_date)
+    values (review_seq.nextval, 'a0002', 5, 'Å×½ºÆ® ¸®ºä15', 6, sysdate);
+insert into review_info(review_NO, user_ID, review_scope, review_Text, rest_NO, review_date)
+    values (review_seq.nextval, 'a0001', 5, 'Å×½ºÆ® ¸®ºä16', 5, sysdate);
+insert into review_info(review_NO, user_ID, review_scope, review_Text, rest_NO, review_date)
+    values (review_seq.nextval, 'a0002', 4, 'Å×½ºÆ® ¸®ºä17', 4, sysdate);
+insert into review_info(review_NO, user_ID, review_scope, review_Text, rest_NO, review_date)
+    values (review_seq.nextval, 'a0003', 3, 'Å×½ºÆ® ¸®ºä18', 3, sysdate);
+insert into review_info(review_NO, user_ID, review_scope, review_Text, rest_NO, review_date)
+    values (review_seq.nextval, 'a0004', 2, 'Å×½ºÆ® ¸®ºä19', 2, sysdate);
+insert into review_info(review_NO, user_ID, review_scope, review_Text, rest_NO, review_date)
+    values (review_seq.nextval, 'a0005', 1, 'Å×½ºÆ® ¸®ºä20', 1, sysdate);   
 
 
 -- insert: reviewimg_info

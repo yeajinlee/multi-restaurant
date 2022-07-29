@@ -19,6 +19,8 @@ public interface DetailDAO {
 	public List selectAllReview(int rest_NO) throws DataAccessException;
 	
 	public int countReview(int rest_NO) throws DataAccessException;
+	
+	public String avgScope(int rest_NO) throws DataAccessException;
 
 	public List selectSideList() throws DataAccessException;
 

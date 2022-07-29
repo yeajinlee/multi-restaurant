@@ -45,6 +45,13 @@ public class DetailServiceImpl implements DetailService{
 	}
 	
 	@Override
+	public String avgScope(int rest_NO) throws Exception {
+		String avgScope = detailDAO.avgScope(rest_NO);
+//		System.out.println("service " + avgScope);
+		return avgScope;
+	}
+	
+	@Override
 	public List detailSideList() throws Exception {
 		List detailSideList = detailDAO.selectSideList();
 		return detailSideList;

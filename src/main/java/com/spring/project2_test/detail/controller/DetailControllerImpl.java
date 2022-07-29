@@ -61,6 +61,9 @@ public class DetailControllerImpl implements DetailController {
 		mav.addObject("detailSideList", detailSideList);
 		int reviewCnt = detailService.reviewCount(rest_NO);
 		mav.addObject("reviewCnt", reviewCnt);
+		String avgScope = detailService.avgScope(rest_NO);
+		mav.addObject("avgScope", avgScope);
+//		System.out.println("controller " + avgScope);
 		return mav;
 	}
 		

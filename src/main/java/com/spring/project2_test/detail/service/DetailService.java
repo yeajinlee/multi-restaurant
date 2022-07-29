@@ -16,6 +16,8 @@ public interface DetailService {
 	public List<ReviewVO> reviewList(int rest_NO) throws Exception;
 	
 	public int reviewCount(int rest_NO) throws Exception;
+	
+	public String avgScope(int rest_NO) throws Exception;
 
 	public List detailSideList() throws Exception;
 
@@ -27,6 +29,8 @@ public interface DetailService {
 	public void addNewReview(DetailReviewVO detailReviewVO) throws Exception;
 
 	public void addNewReviewImg(ImageVO imageVO) throws Exception;
+
+
 
 
 	

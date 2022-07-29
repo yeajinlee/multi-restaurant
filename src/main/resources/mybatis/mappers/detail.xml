@@ -87,4 +87,9 @@
 			SELECT count(*) FROM review_info WHERE rest_NO = #{rest_NO}
 		]]>
 	</select>
+	<select id="avgScope" resultType="String">
+		<![CDATA[
+			SELECT AVG(review_scope) FROM review_info WHERE rest_NO = #{rest_NO}
+		]]>
+	</select>
 </mapper>
